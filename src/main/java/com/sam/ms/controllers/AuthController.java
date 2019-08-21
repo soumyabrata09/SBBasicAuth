@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
+@RequestMapping(value = "/api")
 public class AuthController {
 
 //	@RequestMapping(value ="api/auth/login/submit" , method = RequestMethod.POST  )
@@ -23,8 +24,15 @@ public class AuthController {
 //		return "Welcome";
 //	}
 	
-	@RequestMapping(value ="api/auth/login/submit" , method = RequestMethod.POST  )
-	public ResponseEntity<String> authenticateAndDeliver() {
-		return new ResponseEntity<String>("Welcome,your authorization done successfully",HttpStatus.OK);
+// 	@RequestMapping(value ="api/auth/login/submit" , method = RequestMethod.POST  )
+// 	public ResponseEntity<String> authenticateAndDeliver() {
+// 		return new ResponseEntity<String>("Welcome,your authorization done successfully",HttpStatus.OK);
+// 	}
+	
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	public String getListOfUsers() {
+		String ack=null;
+		ack="hello i am vishal";
+		return ack;
 	}
 }
